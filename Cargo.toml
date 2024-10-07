@@ -1,0 +1,7 @@
+
+[workspace]
+
+members = [
+    "mini_rustdesk_server",
+    "mini_rustdesk_agent",
+]
