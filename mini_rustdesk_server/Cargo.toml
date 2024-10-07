@@ -7,7 +7,9 @@ edition = "2021"
 protobuf = { version = "3.1", features = ["with-bytes"] }
 tokio = { version = "1.20", features = ["full"] }
 tokio-util = { version = "0.7", features = ["full"] }
-
+anyhow = "1.0"
+flexi_logger = { version = "0.22", features = ["async", "use_chrono_for_offset", "dont_minimize_extra_stacks"] }
+clap = "2"
 
 [build-dependencies]
 protobuf-codegen = { version = "3.1" }

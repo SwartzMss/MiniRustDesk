@@ -1,0 +1,10 @@
+[package]
+name = "mini_rustdesk_utils"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+clap = "2"
+sodiumoxide = "0.2"
+dns-lookup = "2.0.4"
+base64 = "0.13"

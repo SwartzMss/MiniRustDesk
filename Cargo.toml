@@ -3,5 +3,5 @@
 
 members = [
     "mini_rustdesk_server",
-    "mini_rustdesk_agent",
+    "mini_rustdesk_agent", "mini_rustdesk_utils",
 ]
