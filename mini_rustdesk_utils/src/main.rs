@@ -1,8 +1,6 @@
-use dns_lookup::{lookup_addr, lookup_host};
 use sodiumoxide::crypto::sign;
 use std::{
     env,
-    net::{IpAddr, TcpStream},
     process, str,
 };
 
@@ -70,12 +68,6 @@ fn main() {
                 process::exit(0x0001);
             }
             println!("Key pair is VALID");
-        }
-        "doctor" => {
-            if args.len() <= 2 {
-                error_then_help("You must supply the mini_rustdesk-server address");
-            }
-            // doctor(args[2].as_str());
         }
         _ => print_help(),
     }

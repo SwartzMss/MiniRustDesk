@@ -10,6 +10,11 @@ tokio-util = { version = "0.7", features = ["full"] }
 anyhow = "1.0"
 flexi_logger = { version = "0.22", features = ["async", "use_chrono_for_offset", "dont_minimize_extra_stacks"] }
 clap = "2"
+log = "0.4"
+ipnetwork = "0.20"
+sodiumoxide = "0.2"
+sqlx = { version = "0.6", features = [ "runtime-tokio-rustls", "sqlite", "macros", "chrono", "json" ] }
+deadpool = "0.8"
 
 [build-dependencies]
 protobuf-codegen = { version = "3.1" }
