@@ -8,7 +8,7 @@ use std::net::SocketAddr;
 use tokio::net::{lookup_host, ToSocketAddrs, UdpSocket};
 use tokio_socks::{udp::Socks5UdpFramed, IntoTargetAddr, TargetAddr, ToProxyAddrs};
 use tokio_util::{codec::BytesCodec, udp::UdpFramed};
-
+use crate::common::timeout;
 pub enum FramedSocket {
     Direct(UdpFramed<BytesCodec>),
     ProxySocks(Socks5UdpFramed),
@@ -73,9 +73,9 @@ impl FramedSocket {
         ms_timeout: u64,
     ) -> ResultType<Self> {
         let framed = if username.trim().is_empty() {
-            super::timeout(ms_timeout, Socks5UdpFramed::connect(proxy, Some(local))).await??
+            timeout(ms_timeout, Socks5UdpFramed::connect(proxy, Some(local))).await??
         } else {
-            super::timeout(
+            timeout(
                 ms_timeout,
                 Socks5UdpFramed::connect_with_password(proxy, Some(local), username, password),
             )

@@ -2,7 +2,18 @@
 use flexi_logger::*;
 mod config;
 use config::RENDEZVOUS_PORT;
+#[macro_use]
 mod common;
+mod database;
+mod peer;
+mod protos;
+pub use protos::*;
+mod bytes_codec;
+mod compress;
+mod fs;
+mod tcp;
+mod udp;
+mod relay_server;
 mod rendezvous_server;
 use rendezvous_server::RendezvousServer;
 use crate::common::{init_args,get_arg_or};
